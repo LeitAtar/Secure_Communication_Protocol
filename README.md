@@ -1,122 +1,153 @@
-# 🛡️ Defensive Systems Programming Final Project - OUI
+# 🛡️ Secure File Transfer Magic 🎩✨
 
-Hey there! 👋 Welcome to my final project for the **Defensive Systems Programming** course at the **Open University of Israel (OUI)**. This journey is all about building a secure client-server application for encrypted file transfer. We'll dive into defensive coding practices using both C++ (for the client) and Python (for the server). Ready to explore? Let's get started! 🚀
-
----
-
-## 🔍 What's the Big Idea?
-
-Imagine sending files securely over the internet without a single worry. That's what we're crafting here—a secure file transfer protocol between a C++ client and a Python server. The server manages users, handles encryption keys, and receives files with grace and security. Key features? **Encrypted communication** 🔒, **file integrity verification** ✅, and **multi-user support** 👥.
-
-- **Client Language**: C++ 🖥️
-- **Server Language**: Python 3.12.1 🐍
-- **Encryption Libraries**: Crypto++ (C++), PyCryptodome (Python)
+Welcome to the **Defensive Systems Programming Final Project** for the **Open University of Israel (OUI)**! 🎓 This project is a whimsical journey into the realms of secure file transfer between a C++ client and a Python server. We're blending cryptography 🕵️‍♂️, network programming 🌐, and a sprinkle of defensive coding 🛡️ to create a robust and secure application. Ready to embark on this adventure? Let's dive in! 🚀
 
 ---
 
-## 🏗️ How It All Comes Together
+## 🌟 What's the Buzz? 🐝
 
-### 1. The Client Side (C++17)
+Imagine sending your precious files over the internet without a care in the world, knowing they're wrapped up tighter than a mummy in a tomb. 🧟‍♂️ That's exactly what we're cooking up here! A secure client-server application that ensures your files are transferred safely, securely, and with a touch of magic. ✨
 
-- **Batch Mode Operation**: The client runs in batch mode, reading server info from a `transfer.info` file. No GUI to distract us here!
-- **Crypto++ Library**: We're using this nifty library for all our encryption magic tricks.
-- **RSA Key Exchange**: The client generates an RSA key pair and sends the public key to the server. 🔑 Abracadabra!
-- **AES Encryption**: The server sends back an encrypted AES key, which the client uses to encrypt the file. 🔒 Voila!
-- **CRC32 Verification**: After sending the file, the client calculates a CRC32 checksum to ensure everything arrived safe and sound. ✅
+**Key Features:**
 
-### 2. The Server Side (Python 3.12.1)
-
-- **Concurrent Client Handling**: Thanks to Python's `threading` module, the server can juggle multiple clients at once. 🧵 Multitasking FTW!
-- **SQLite Database**: All client info and files are stored in `defensive.db`, keeping our data snug and secure. 📂
-- **AES Key Management**: The server generates and securely stores an AES key for each client. No key left behind! 🔑
+- **🔒 Encrypted Communication**: Keep those prying eyes away!
+- **✅ File Integrity Verification**: Trust, but verify.
+- **👥 Multi-User Support**: The more, the merrier!
 
 ---
 
-## 📁 What's Inside the Project?
+## 🧩 How Does the Magic Happen? 🪄
 
-- **`client.cpp`**: The main C++ client application handling everything from registration to secure file transfer. It's like the Swiss Army knife of clients!
-- **`client.h`**: Header file defining constants, functions, and protocol codes. Think of it as the client's secret recipe book.
-- **`server_sql.py`**: The Python server script managing clients, file uploads, and database interactions. The server's command center!
+### 🖥️ The Client Side (C++17)
 
----
+- **Batch Mode Operation**: No pesky GUIs here! The client reads server info from a `transfer.info` file. Simple and efficient. 📄
+- **Crypto++ Library**: Our trusty wand for all encryption spells. 🧙‍♂️
+- **🔑 RSA Key Exchange**: The client conjures an RSA key pair and shares the public key with the server.
+- **🔐 AES Encryption**: The server sends back an enchanted AES key, which the client uses to encrypt the file.
+- **🧪 CRC32 Verification**: A potion to ensure the file's integrity after the journey.
 
-## 🌟 Standout Features
+### 🐍 The Server Side (Python 3.12.1)
 
-### 1. 🔐 Secure Communication
-
-- **RSA (1024-bit)**: Used for the initial key exchange. Because who doesn't love a good handshake?
-- **AES-CBC (256-bit)**: Employed for encrypting files, with zero IV and PKCS#7 padding. Keeping it tight and secure!
-
-### 2. 📊 Reliable Database Storage
-
-- **SQLite Database (`defensive.db`)**: Contains two tables:
-  - **clients**: Stores client IDs, names, public keys, AES keys, and timestamps. A who's who of our users!
-  - **files**: Records metadata about received files, including names, paths, and verification status. File paparazzi!
-
-### 3. 🛡️ File Integrity Checks
-
-- **CRC32 Checksum**: Ensures the file hasn't been tampered with during transmission. Trust but verify!
-
-### 4. ⚠️ Robust Error Handling & Reconnection
-
-- **Detailed Logging**: Both client and server log activities to handle errors effectively. No mystery errors here!
-- **Reconnection Support**: Clients can reconnect smoothly using code `827`. Like a boomerang!
+- **🧵 Multithreading Magic**: The server juggles multiple clients effortlessly using Python's threading. 🤹‍♂️
+- **📚 SQLite Database**: A grimoire storing all client info and files securely.
+- **🔑 AES Key Management**: Generating and safeguarding AES keys like a dragon guarding its treasure. 🐲
 
 ---
 
-## ⚙️ Getting Started
+## 📁 What's Inside the Spellbook? 📜
 
-### 1. Server Setup 🖧
-
-- **Run the Server**: Fire up `server_sql.py` to get the party started.
-- **Configuration**: The server reads the port number from `port.info`. Customizable to your liking!
-- **Database Initialization**: If `defensive.db` isn't around, the server creates it on the fly. Magic!
-- **Operation**: The server listens for client connections, handles registrations, and stores files in the `received_files` directory. Always ready to receive!
-
-### 2. Client Setup 🖥️
-
-- **Compile the Client**: Use **Visual Studio 2022** with **C++17** to compile `client.cpp`. Time to get those gears turning!
-- **Prepare `transfer.info`**: Include the following details:
-It's like sending a letter with all the right addresses!
-- **Run the Client**: Execute the compiled client. It will connect to the server, handle encryption, and transfer the specified file. Smooth as butter! 📂
+- **`client.cpp`**: The valiant knight handling everything from registration to secure file transfer.
+- **`client.h`**: The knight's code of honor—constants, functions, and protocol codes.
+- **`server_sql.py`**: The wise old wizard managing clients, file storage, and the mystical database.
 
 ---
 
-## 🔢 Communication Protocol Codes
+## 🚀 Features That Make Us Soar
+
+### 🔐 Secure Communication
+
+- **RSA (1024-bit)**: Our initial handshake, ensuring only the right parties communicate. 🤝
+- **AES-CBC (256-bit)**: Encrypting files with the strength of a thousand suns. ☀️
+  - Zero IV and PKCS#7 padding for that extra touch of security.
+
+### 📊 Reliable Database Storage
+
+- **SQLite Database (`defensive.db`)**:
+  - **clients** table: A registry of all heroes (clients) in our realm.
+  - **files** table: Chronicles of all the files received, their integrity, and their origins.
+
+### 🛡️ File Integrity Checks
+
+- **CRC32 Checksum**: The magical seal ensuring the file hasn't been tampered with by dark forces. 🧿
+
+### ⚙️ Robust Error Handling & Reconnection
+
+- **Detailed Logging**: Keeping a vigilant eye on all activities. No sneaky goblins slipping through! 👀
+- **Reconnection Support**: If a client falls off their horse, they can get right back on! 🐎
+
+---
+
+## 🎮 Let's Get Started! 🎉
+
+### 🖧 Server Setup
+
+1. **Fire Up the Server**: Run `server_sql.py` and watch the magic begin. ✨
+2. **Port Configuration**: The server reads the port number from `port.info`. Customize it to your liking! 🔧
+3. **Database Initialization**: If `defensive.db` isn't found, the server conjures it up automatically. 🧙‍♀️
+4. **Operation**: The server listens for clients, handles registrations, and stores files in the `received_files` directory.
+
+### 🖥️ Client Setup
+
+1. **Compile the Client**: Use **Visual Studio 2022** with **C++17** to compile `client.cpp`. Let the code knights assemble! ⚔️
+2. **Prepare `transfer.info`**: Include the following magical incantations:
+
+   ```
+   <server_ip>:<port>
+   <client_name>
+   <file_path>
+   ```
+
+   **Example:**
+
+   ```
+   192.168.1.100:1234
+   MerlinTheWizard
+   C:\path	o\your\enchanted_document.txt
+   ```
+
+3. **Run the Client**: Execute the compiled client to send your file through the enchanted network. 🌐
+
+---
+
+## 🔄 Communication Protocol Codes
 
 **Client Requests:**
 
-- **825**: Client Registration 📝 "Hello, it's me!"
-- **826**: Sending Public Key 🔑 "Here's my key!"
-- **827**: Reconnection Request 🔄 "I'm back!"
-- **828**: Sending Encrypted File 📤 "Incoming file!"
-- **900-902**: File CRC Verification ✅ "Did you get that?"
+- **825**: Client Registration 📝 "Greetings! I'd like to join the quest."
+- **826**: Sending Public Key 🔑 "Here's my magic key!"
+- **827**: Reconnection Request 🔄 "I'm back from the shadows!"
+- **828**: Sending Encrypted File 📤 "Delivering the secret scroll!"
+- **900**: File CRC Verification Passed ✅ "The scroll arrived intact!"
+- **901**: File CRC Verification Failed - Retry 🔄 "Something went awry. Let's try again!"
+- **902**: File CRC Verification Failed - Final ❌ "Alas, the mission failed."
 
 **Server Responses:**
 
-- **1600**: Registration Successful 🎉 "Welcome aboard!"
-- **1601**: Public Key Received 👍 "Got your key!"
-- **1602**: AES Key Sent 🔑 "Here's your AES key!"
-- **1603**: File Received 📥 "File received loud and clear!"
-- **1604**: CRC Verification Passed ✅ "All good on our end!"
-- **1605**: CRC Verification Failed ❌ "Uh-oh, something's off!"
-- **1606**: Error Occurred ⚠️ "We hit a snag!"
-- **1607**: Reconnection Successful 🔄 "Good to have you back!"
+- **1600**: Registration Successful 🎉 "Welcome to the fellowship!"
+- **1601**: Registration Failure 🚫 "You shall not pass!"
+- **1602**: Public Key Acknowledged 👍 "Key received and accepted."
+- **1603**: File Received 📥 "Scroll secured in the archives."
+- **1604**: Acknowledgment Received ✅ "Message received loud and clear."
+- **1605**: Reconnection Successful 🔄 "Welcome back, brave one!"
+- **1606**: Reconnection Failure 🚫 "We don't recognize you."
+- **1607**: General Error ⚠️ "Something's not right in the realm."
 
 ---
 
-## 📝 Technical Highlights
+## 🛠️ Technical Marvels
 
-- **Defensive Programming**: Careful validation and error checking are implemented to prevent vulnerabilities. Safety first!
-- **Multi-threading**: The server uses threading to handle multiple clients without breaking a sweat. 🧵 Keeping all the plates spinning!
-- **Error Handling**: From invalid payloads to decryption failures, the system handles errors gracefully. No drama here!
+- **Defensive Programming**: Our code is armored up against the dark arts of bugs and vulnerabilities. 🛡️
+- **Multi-threading**: The server handles multiple clients like a maestro conducting an orchestra. 🎶
+- **Error Handling**: Gracefully recovering from mishaps, ensuring the quest continues. 🌈
+
+---
+
+## 🤝 Joining the Quest
+
+Feel free to fork this repository, open issues, or submit pull requests. Let's band together to make this project legendary! 🛡️⚔️
 
 ---
 
 ## 🙏 Acknowledgments
 
-A huge thank you to the **Open University of Israel** for providing the resources and guidance throughout this course. This project was both challenging and rewarding, and I appreciate the support from instructors and peers alike. Couldn't have done it without you! 🎓✨
+A heartfelt thank you to the **Open University of Israel** for guiding us through this magical journey. The wisdom imparted by the instructors and the camaraderie among peers made this quest unforgettable. Thank you! 🌟
 
 ---
 
-Thanks for stopping by! 😊 If you have any questions or feedback, don't hesitate to reach out. Let's keep making the digital world a safer place, one line of code at a time! 🚀💬
+## 📞 Reach Out!
+
+Got questions, ideas, or just want to chat about magic and code? Don't hesitate to reach out! Let's weave spells together to make the digital realm a safer place. 🌐✨
+
+---
+
+Thanks for stopping by! May your code be bug-free and your quests successful! Happy coding! 😄👩‍💻👨‍💻
