@@ -4,9 +4,32 @@ Welcome to the **Defensive Systems Programming Final Project** for the **Open Un
 
 ---
 
+## 📚 Table of Contents
+
+- [🌟 What's the Buzz? 🐝](#-whats-the-buzz-)
+- [🧩 How Does the Magic Happen? 🪄](#-how-does-the-magic-happen-)
+  - [🖥️ The Client Side (C++17)](#-the-client-side-c17)
+  - [🐍 The Server Side (Python 3.12.1)](#-the-server-side-python-3121)
+- [📁 What's Inside the Spellbook? 📜](#-whats-inside-the-spellbook-)
+- [🚀 Features That Make Us Soar](#-features-that-make-us-soar)
+  - [🔐 Secure Communication](#-secure-communication)
+  - [📊 Reliable Database Storage](#-reliable-database-storage)
+  - [🛡️ File Integrity Checks](#-file-integrity-checks)
+  - [⚙️ Robust Error Handling & Reconnection](#-robust-error-handling--reconnection)
+- [🎮 Let's Get Started! 🎉](#-lets-get-started-)
+  - [🖧 Server Setup](#-server-setup)
+  - [🖥️ Client Setup](#-client-setup)
+- [🔄 Communication Protocol Codes](#-communication-protocol-codes)
+- [🛠️ Technical Marvels](#-technical-marvels)
+- [🤝 Joining the Quest](#-joining-the-quest)
+- [🙏 Acknowledgments](#-acknowledgments)
+- [📞 Reach Out!](#-reach-out)
+
+---
+
 ## 🌟 What's the Buzz? 🐝
 
-Imagine sending your precious files over the internet without a care in the world, knowing they're wrapped up tighter than a mummy in a tomb. 🧟‍♂️ That's exactly what we're cooking up here! A secure client-server application that ensures your files are transferred safely, securely, and with a touch of magic. ✨
+Imagine sending your precious files over the internet without a care in the world, knowing they're wrapped up tighter than a mummy in a tomb. 🧟‍♂️ That's exactly what we're creating here! A secure client-server application that ensures your files are transferred safely, securely, and with a touch of magic. ✨
 
 **Key Features:**
 
@@ -92,7 +115,7 @@ Imagine sending your precious files over the internet without a care in the worl
    ```
    192.168.1.100:1234
    MerlinTheWizard
-   C:\path	o\your\enchanted_document.txt
+   C:\path\to\your\enchanted_document.txt
    ```
 
 3. **Run the Client**: Execute the compiled client to send your file through the enchanted network. 🌐
@@ -126,7 +149,7 @@ Imagine sending your precious files over the internet without a care in the worl
 
 ## 🛠️ Technical Marvels
 
-- **Defensive Programming**: Our code is armored up against the dark arts of bugs and vulnerabilities. 🛡️
+- **Defensive Programming**: Our code is armored against the dark arts of bugs and vulnerabilities. 🛡️
 - **Multi-threading**: The server handles multiple clients like a maestro conducting an orchestra. 🎶
 - **Error Handling**: Gracefully recovering from mishaps, ensuring the quest continues. 🌈
 
